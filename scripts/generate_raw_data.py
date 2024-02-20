@@ -67,7 +67,7 @@ def Generate_Raw_Spiking_Data(n_neurons,n_inputs,n_trials,attentions):
             raw_data[k] = raw_data_neuron
         data[attention] = raw_data
 
-    return raw_data
+    return data
 
 
 
