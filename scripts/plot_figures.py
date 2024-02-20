@@ -66,8 +66,8 @@ def plot_information_distribution_data(data):
     fig, axs = plt.subplots(figsize=(8,3),ncols=2, nrows=1)
 
     colors = ["b","r"]
-    attentions = list(data.keys())
-    for i,attention in enumerate(attentions):
+    attentions = len(data[0])
+    for i in range(attentions):
         axs[0].bar(np.array([1,2,3,4])- (-1)**i*0.13,i_detection[i],yerr=i_detection_interval[i], width=0.2,color=colors[i])
 
     axs[0].set_title('Information Detection')
@@ -80,7 +80,7 @@ def plot_information_distribution_data(data):
 
 
 
-    for i,attention in enumerate(attentions):
+    for i in range(attentions):
         axs[1].bar(np.array([1])- (-1)**i*0.13,i_differentiation[i],yerr=i_differentiation_interval[i], width=0.2,color=colors[i])
     axs[1].set_xlim(0.5,1.5)
     axs[1].set_title('Information Differentiation')
