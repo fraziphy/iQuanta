@@ -8,9 +8,12 @@ def plot_distribution_data(data):
     fig, axs = plt.subplots(figsize=(4,6),ncols=1, nrows=2)
 
     attentions = list(data.keys())
+    
+    
+    n_trials,n_inputs, n_neurons = data[attentions[0]]["S"].shape
 
 
-    bins = np.floor(np.sqrt(data[attentions[0]]["S"].shape[0])).astype(int)
+    bins = np.floor(np.sqrt(n_trials)).astype(int)
 
     for i in range(len(attentions)):
         axs[i].hist(data[attentions[i]]["S"][:,0,0].ravel(), bins=np.linspace(0,25,bins),alpha=0.6)
