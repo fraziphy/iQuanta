@@ -56,7 +56,7 @@ def plot_distribution_data(data):
 
 
 
-def plot_information_distribution_data(data):
+def plot_information_content(data):
     
     i_detection = data[0]
     i_detection_interval = data[1]

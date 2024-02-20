@@ -51,3 +51,31 @@ def Process_Data_Ditribution(data, method="K_means_clustering"):
 
 
     return i_detection, i_detection_interval, i_differentiation, i_differentiation_interval
+
+
+
+
+def Process_Data_Spiking(data, method="K_means_clustering"):
+
+    i_detection = []
+    i_detection_interval = []
+
+    i_differentiation = []
+    i_differentiation_interval = []
+
+    
+    attentions = list(data.keys())
+    for attention in attentions:
+        spontaneous_activities, evoked_responses = Pre_Process_Data(data[attention])
+        
+
+        i_detec,i_diff = iquanta(spontaneous_activities,evoked_responses,method)
+
+        i_detection.append(i_detec[0])
+        i_detection_interval.append(i_detec[1])
+
+        i_differentiation.append(i_diff[0])
+        i_differentiation_interval.append(i_diff[1])
+
+
+    return i_detection, i_detection_interval, i_differentiation, i_differentiation_interval
