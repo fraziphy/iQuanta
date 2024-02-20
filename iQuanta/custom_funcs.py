@@ -47,8 +47,7 @@ def Information_Content(spontaneous_data,evoked_data,method="k_means_clustering"
         
         info_detec[0,i] = test.mean() # The mean over k-fold sampling to quantify information detection on the test set.
         info_detec[1,i] = t_crit * test.std() / np.sqrt(config.k_fold) # 95% confidence interval.
-            
-        return info_detec
+        
     
     
     ################## INFORMATION DIFFERENTIATION
