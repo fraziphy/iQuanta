@@ -17,7 +17,13 @@ from sklearn.metrics.cluster import normalized_mutual_info_score
 # 
 #
 # Define the function to extract information content in neural data.
-def Information_Content(spontaneous_data,evoked_data,algorithm):
+def Information_Content(spontaneous_data,evoked_data,method="k_means_clustering"):
+    
+    algorithm = K_Means_Clustering
+    if method = "knn":
+        algorithm = KNN
+    if method = "neural_network":
+        algorithm = Neural_Network
         
     # Spontaneous and evoked data are arranged into three dimensions (n_trials * n_inputs * n_features), corresponding to the number of trials, inputs, and features. The number of features can represent various neural characteristics. For instance, it can denote the number of neurons. If there is only one feature, the data should be in the format of (n_trials * n_inputs * 1).
     
