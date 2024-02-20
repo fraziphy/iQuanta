@@ -1,5 +1,6 @@
 # process_data.py
 import numpy as np
+from sklearn.model_selection import StratifiedKFold
 from sklearn.feature_selection import mutual_info_classif
 import scripts.config
 
