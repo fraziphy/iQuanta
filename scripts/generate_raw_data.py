@@ -88,7 +88,7 @@ def Generate_Distribution_Data(n_neurons,n_inputs,n_trials,attentions):
         
         for i in range(n_neurons):
             for j in range(n_inputs):
-                R[:,j,i] = np.random.normal(scripts.config.response_amp+attention,scripts.config.evok_dist_std,(n_trials))
+                R[:,j,i] = np.random.normal(scripts.config.spon_dist_mean+(j+1) * scripts.config.response_amp+attention,scripts.config.evok_dist_std,(n_trials))
                 
         
         data_plot_1["attention={}".format(attention)]["R"] = R
