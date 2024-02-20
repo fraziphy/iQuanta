@@ -94,9 +94,9 @@ def Stratified_K_FOLD_MI(data,cond,k_fold=10):
         y_train,y_test = y[train_index],y[test_index] 
         
         # Compute and store the MI on the training set
-        if cond=="distribution_data":
-            MI[i] = Mutual_Information(X_train,y_train)
-        else:
+        if cond=="spike_data":
             MI[i] = mutual_info_classif(X_train,y_train)[0]
+        else:
+            MI[i] = Mutual_Information(X_train,y_train)
     
     return MI.mean(),MI.std()
