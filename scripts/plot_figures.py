@@ -58,10 +58,10 @@ def plot_distribution_data(data):
 
 def plot_information_distribution_data(data):
     
-    i_detection = data["i_detection"]
-    i_detection_interval = data["i_detection_interval"]
-    i_differentiation = data["i_differentiation"]
-    i_differentiation_interval = data["i_differentiation_interval"]
+    i_detection = data[0]
+    i_detection_interval = data[1]
+    i_differentiation = data[2]
+    i_differentiation_interval = data[3]
     
     fig, axs = plt.subplots(figsize=(8,3),ncols=2, nrows=1)
 
