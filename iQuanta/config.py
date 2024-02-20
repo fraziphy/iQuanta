@@ -5,7 +5,6 @@ from pathlib import Path  # pathlib is seriously awesome!
 data_dir = Path('../data/')
 data_raw_path = data_dir / 'raw/my_file.pkl'
 data_processed_path = data_dir / 'processed/my_file.pkl'
-data_cleaned_path = data_dir / 'cleaned/my_file.pkl'
 
 # Stratified_K_FOLD
 k_fold = 10 # The number of random samplings for the stratified k-fold sampling algorithm.
