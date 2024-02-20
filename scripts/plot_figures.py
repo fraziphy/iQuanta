@@ -1,5 +1,6 @@
 # plot_figures.py
 
+import numpy as np
 import matplotlib.pyplot as plt
 
 def plot_distribution_data(data):
