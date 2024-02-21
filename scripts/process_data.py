@@ -1,6 +1,6 @@
 # process_data.py
 import numpy as np
-from iQuanta.custom_funcs import Information_Content as iquanta
+from iQuanta.funcs import iquanta
 import scripts.config
 
 def Pre_Process_Data(data):
