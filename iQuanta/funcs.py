@@ -17,7 +17,7 @@ from sklearn.metrics.cluster import normalized_mutual_info_score
 # 
 #
 # Define the function to extract information content in neural data.
-def Information_Content(spontaneous_data,evoked_data,method="k_means_clustering"):
+def iquanta(spontaneous_data,evoked_data,method="k_means_clustering"):
     
     algorithm = K_Means_Clustering
     if method == "knn":
