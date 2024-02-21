@@ -1,7 +1,7 @@
 # test_custom_funcs.py
 
 import unittest
-import iQuanta.custom_funcs
+import iQuanta.funcs
 
 
 class TestFraziphy(unittest.TestCase):
