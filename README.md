@@ -2,7 +2,7 @@
 
 ## Description
 
-### iQuanta is a Python module developed to formulate a novel framework for quantifying the information content in neural data using machine learning techniques.
+### iQuanta is a Python module designed to establish an innovative framework for quantifying the information content within neural data by leveraging machine learning techniques.
 
 One of the primary methods neurons employ to communicate is through the generation of action potentials, also known as spikes. These neural spikes can occur spontaneously or in response to external stimuli, carrying information about the stimuli they encode. However, accurately quantifying the information content within neural response patterns remains a challenging endeavor.
 
