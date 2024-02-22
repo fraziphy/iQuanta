@@ -1,5 +1,7 @@
 # iQuanta
 
+## Description
+
 ### iQuanta is a Python module developed to formulate a novel framework for quantifying the information content in neural data using machine learning techniques.
 
 One of the primary methods neurons employ to communicate is through the generation of action potentials, also known as spikes. These neural spikes can occur spontaneously or in response to external stimuli, carrying information about the stimuli they encode. However, accurately quantifying the information content within neural response patterns remains a challenging endeavor.
@@ -16,6 +18,8 @@ In the unsupervised approach, the clustering algorithm's performance in predicti
 ------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
+
+## Installation
 
 To install the _**iQuanta**_, ensure the necessary Python libraries **numpy**, **torch**, **sklearn**, and **scipy** are installed. Please verify that the corresponding dependencies are present. To confirm that the scripts and required libraries are installed on your local machine, navigate to the directory of the iQuanta module. You can begin by testing the Python scripts within the project and scripts directories. To do this, install the Python library nose2 and execute it from the command line:
 ```
@@ -35,8 +39,15 @@ To **uninstall** the module, please copy and execute the following command in a 
 ```
 !python -m pip uninstall iQuanta --yes
 ```
+
 ------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+
+## Usage
 
 To import the module, use the following syntax:
 ```
@@ -87,8 +98,10 @@ i_differentiation:
 ------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
 
-### The structure of the project is as follows:
+## The structure of the project is as follows:
 ```
 iQuanta
 ├── data
@@ -149,3 +162,72 @@ iQuanta
 - README.md: The README file providing an overview of the project, its purpose, and how to use it.
 
 - setup.py: The setup script for installing the iQuanta module as a Python package.
+
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+
+## Contributing
+
+Thank you for considering contributing to our project! We welcome contributions from the community to help improve our project and make it even better. To ensure a smooth contribution process, please follow these guidelines:
+
+    1. **Fork the Repository**: Fork our repository to your GitHub account and clone it to your local machine.
+
+    2. Branching Strategy: Create a new branch for your contribution. Use a descriptive branch name that reflects the purpose of your changes.
+
+    3. Code Style: Follow our coding standards and style guidelines. Make sure your code adheres to the existing conventions to maintain consistency across the project.
+
+    4. Pull Request Process:
+        Before starting work, check the issue tracker to see if your contribution aligns with any existing issues or feature requests.
+        Create a new branch for your contribution and make your changes.
+        Commit your changes with clear and descriptive messages explaining the purpose of each commit.
+        Once you're ready to submit your changes, push your branch to your forked repository.
+        Submit a pull request to the main repository's develop branch. Provide a detailed description of your changes and reference any relevant issues or pull requests.
+
+    5. Code Review: Expect feedback and review from our maintainers or contributors. Address any comments or suggestions provided during the review process.
+
+    6. Testing: Ensure that your contribution is properly tested. Write unit tests or integration tests as necessary to validate your changes. Make sure all tests pass before submitting your pull request.
+
+    7. Documentation: Update the project's documentation to reflect your changes. Include any necessary documentation updates, such as code comments, README modifications, or user guides.
+
+    8. License Agreement: By contributing to our project, you agree to license your contributions under the terms of the project's license (MIT License).
+
+    9. Be Respectful: Respect the opinions and efforts of other contributors. Maintain a positive and collaborative attitude throughout the contribution process.
+
+We appreciate your contributions and look forward to working with you to improve our project! If you have any questions or need further assistance, please don't hesitate to reach out to us.
+
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+
+## Credits
+
+- **Author:** [Farhad Razi](https://github.com/fraziphy)
+
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+
+## License
+
+This project is licensed under the [MIT License](LICENSE)
+
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+
+## Contact
+
+- **Contact information:** [email](farhad.razi.1988@gmail.com)
