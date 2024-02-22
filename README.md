@@ -2,39 +2,6 @@
 
 ### iQuanta is a Python module developed to formulate a novel framework for quantifying the information content in neural data using machine learning techniques.
 
-
-### The structure of the project is as follows:
-```
-iQuanta
-├── data
-│   ├── processed
-│   │   └── my_file.pkl
-│   └── raw
-│       └── my_file.pkl
-├── iQuanta
-│   ├── __init__.py
-│   ├── config.py
-│   └── funcs.py
-├── notebook
-│   └── iQuanta.ipynb
-├── scripts
-│   ├── __init__.py
-│   ├── config.py
-│   ├── generate_raw_data.py
-│   ├── plot_figures.py
-│   └── process_data.py
-├── tests
-│   ├── test_config.py
-│   └── test_funcs.py
-├── LICENSE
-├── README.md
-└── setup.py
-```
-------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------
-
 One of the primary methods neurons employ to communicate is through the generation of action potentials, also known as spikes. These neural spikes can occur spontaneously or in response to external stimuli, carrying information about the stimuli they encode. However, accurately quantifying the information content within neural response patterns remains a challenging endeavor.
 
 The _**iQuanta**_ module is tailored for the quantification of information content in neural signals. The framework's methodology for quantifying information content is outlined in doi:10.1101/2023.12.04.569905. In summary, it introduces two measures: information detection and information differentiation. Information detection evaluates whether neural responses to a stimulus significantly differ from spontaneous neural activities. Conversely, information differentiation assesses whether neural responses to distinct stimuli significantly vary from one another.
@@ -120,3 +87,65 @@ i_differentiation:
 ------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
+
+### The structure of the project is as follows:
+```
+iQuanta
+├── data
+│   ├── processed
+│   │   └── my_file.pkl
+│   └── raw
+│       └── my_file.pkl
+├── iQuanta
+│   ├── __init__.py
+│   ├── config.py
+│   └── funcs.py
+├── notebook
+│   └── iQuanta.ipynb
+├── scripts
+│   ├── __init__.py
+│   ├── config.py
+│   ├── generate_raw_data.py
+│   ├── plot_figures.py
+│   └── process_data.py
+├── tests
+│   ├── test_config.py
+│   └── test_funcs.py
+├── LICENSE
+├── README.md
+└── setup.py
+```
+
+- data: This directory contains two subdirectories: "processed" and "raw". "processed" is intended for storing processed data files, such as pickled dataframes (my_file.pkl), while "raw" is for storing raw data files.
+    - processed/my_file.pkl: A processed data file.
+    - raw/my_file.pkl: A raw data file.
+
+
+- iQuanta: This directory holds the core functionality of the iQuanta module.
+    - __init__.py: Marks the directory as a Python package.
+    - config.py: Contains configuration settings for the iQuanta module.
+    - funcs.py: Includes functions and classes defining the main functionalities of the iQuanta module.
+
+    
+- notebook: This directory contains Jupyter notebooks for exploratory analysis and demonstrations related to the iQuanta module.
+    - iQuanta.ipynb: Jupyter notebook for iQuanta module usage or demonstrations.
+
+    
+- scripts: This directory contains Python scripts for various tasks related to the iQuanta module, such as data processing or visualization.
+    - __init__.py: Marks the directory as a Python package.
+    - config.py: Configuration settings specific to the scripts.
+    - generate_raw_data.py: Script for generating raw data.
+    - plot_figures.py: Script for plotting figures.
+    - process_data.py: Script for processing data.
+
+    
+- tests: This directory contains unit tests for the iQuanta module.
+    - test_config.py: Unit tests for the configuration module.
+    - test_funcs.py: Unit tests for the functions module.
+
+    
+- LICENSE: The license file for the project.
+
+- README.md: The README file providing an overview of the project, its purpose, and how to use it.
+
+- setup.py: The setup script for installing the iQuanta module as a Python package.
