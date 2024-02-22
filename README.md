@@ -1,42 +1,122 @@
 # iQuanta
-This code package is developed to formulate a novel framework to quantify the information content in neural data.
+
+### iQuanta is a Python module developed to formulate a novel framework for quantifying the information content in neural data using machine learning techniques.
 
 
-## The structure of the project is as follows:
+### The structure of the project is as follows:
 ```
-project
-├── README.md
-├── project
+iQuanta
+├── data
+│   ├── processed
+│   │   └── my_file.pkl
+│   └── raw
+│       └── my_file.pkl
+├── iQuanta
 │   ├── __init__.py
 │   ├── config.py
-│   ├── custom_funcs.py
-│   └── custom_funcs.py
-├── notebooks
+│   └── funcs.py
+├── notebook
+│   └── iQuanta.ipynb
 ├── scripts
-├── data
-├── setup.py
-└── tests
-    └── __init__.py
+│   ├── __init__.py
+│   ├── config.py
+│   ├── generate_raw_data.py
+│   ├── plot_figures.py
+│   └── process_data.py
+├── tests
+│   ├── test_config.py
+│   └── test_funcs.py
+├── LICENSE
+├── README.md
+└── setup.py
 ```
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
 
+One of the primary methods neurons employ to communicate is through the generation of action potentials, also known as spikes. These neural spikes can occur spontaneously or in response to external stimuli, carrying information about the stimuli they encode. However, accurately quantifying the information content within neural response patterns remains a challenging endeavor.
 
-To validate that the scripts and the required libraries are installed on the local machine you can get started by running tests on the pythons scripts within the project and scripts directories. To do so, install the python libray nose2 and run it from the command line.
+The _**iQuanta**_ module is tailored for the quantification of information content in neural signals. The framework's methodology for quantifying information content is outlined in doi:10.1101/2023.12.04.569905. In summary, it introduces two measures: information detection and information differentiation. Information detection evaluates whether neural responses to a stimulus significantly differ from spontaneous neural activities. Conversely, information differentiation assesses whether neural responses to distinct stimuli significantly vary from one another.
 
+The _**iQuanta**_ module employs a range of supervised and unsupervised machine learning techniques, such as K-means clustering, K-nearest neighbors, and logistic classification algorithms. Information detection gauges how effectively the machine learning algorithm segregates evoked neural responses to a given stimulus from spontaneous neural activities. Similarly, information differentiation measures the algorithm's ability to distinguish evoked neural responses to different stimuli from each other.
+
+In the unsupervised approach, the clustering algorithm's performance in predicting cluster labels was assessed using Normalized Mutual Information (NMI) as an external validation metric. NMI evaluates the resemblance between the predicted and true cluster labels, with reference to available true labels (see Strehl, A., & Ghosh, J. (2002). Cluster ensembles---a knowledge reuse framework for combining multiple partitions. _Journal of machine learning research, 3_(Dec), 583-617.). A score of zero indicates no similarity, while a score of one represents complete similarity between the predicted and true labels. In the supervised setting, the effectiveness of the clustering algorithm in predicting cluster labels was evaluated using accuracy scores.
+
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+
+To install the _**iQuanta**_, ensure the necessary Python libraries **numpy**, **torch**, **sklearn**, and **scipy** are installed. Please verify that the corresponding dependencies are present. To confirm that the scripts and required libraries are installed on your local machine, navigate to the directory of the iQuanta module. You can begin by testing the Python scripts within the project and scripts directories. To do this, install the Python library nose2 and execute it from the command line:
 ```
 $ pip install nose2
 $ python -m nose2
 ```
 
-
-To install the package as a python module in your Jupyter notebook, please run the following command:
-
+To **install** the _**iQuanta**_ module from GitHub, run the following command:
 ```
 !pip install git+ssh://git@github.com/fraziphy/iQuanta.git
 ```
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
 
-To impoirt the function to quantofy the information content in the neural signals, proceed as follows:
-
+To **uninstall** the module, please copy and execute the following command in a single cell:
 
 ```
-from iQuanta.custom_funcs import Information_Content as iquanta
+!python -m pip uninstall iQuanta --yes
 ```
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+
+To import the module, use the following syntax:
+```
+from iQuanta.funcs import iquanta # The Module to quantify information content
+```
+To quantify information content in neural signals, the  _**iQuanta**_  module accepts three arguments:
+```
+iquanta(spontaneous_activities,evoked_responses,algorithm)
+```
+Here, "spontaneous_activities" and "evoked_responses" represent the neural activity in pre-stimulus and post-stimulus intervals, respectively. The "algorithm" parameter refers to the machine learning technique employed for quantifying information content.
+
+Provide your neural data (including both spontaneous_activities and evoked_responses) as a matrix with the following dimensional configuration:
+
+```
+number_trials, number_stimuli, number_features
+```
+
+The first and second dimensions correspond to the neural signal in each trial for each stimulus. The third dimension signifies different features of the neural signal. For example, it could represent the firing rate of various neurons in single unit recordings, the frequency power of LFP signals, or characteristics like latency and slope of EEG deflections at different electrodes.
+
+To specify the desired algorithm, use the following argument for each algorithm:
+
+    1. Use "K_means_clustering" for K-means clustering algorithm.
+    2. Use "knn" for K-nearest neighbors.
+    3. Use "neural_network" for logistic classification algorithms.
+
+The _**iquanta**_ function returns the values of information detection and information differentiation in the following order:
+
+```
+information_detection, information_differentiation = iquanta(spontaneous_activity,evoked_responses,algorithm)
+```
+The "information_detection" is a matrix of size (2, number_stimuli). The first and second rows in "information_detection" represent the mean and 95% confidence interval for information detection obtained from the stratified k-fold sampling algorithm, where k is set to 10 (to modify k, adjust the value in the iQuanta.config). Each column represents the values corresponding to the respective stimuli.
+
+Similarly, the first and second entries in "information_differentiation" show the mean and 95% confidence interval for information differentiation derived from the stratified k-fold sampling algorithm (with k set to 10).
+
+As an example where number_stimuli=4:
+```
+i_detection,i_differentiation = iquanta(spontaneous_activities,evoked_responses,"K_means_clustering")
+
+i_detection:
+                    array([[0.29146534, 0.51875989, 0.73027708, 0.89519773],
+                            [0.03697001, 0.04568368, 0.03838708, 0.02594112]])
+
+i_differentiation:
+                    array([0.26832067, 0.00986291])
+```
+
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
