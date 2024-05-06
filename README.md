@@ -184,7 +184,7 @@ Thank you for considering contributing to our project! We welcome contributions 
     Before starting work, check the issue tracker to see if your contribution aligns with any existing issues or feature requests.
     Create a new branch for your contribution and make your changes.
     Commit your changes with clear and descriptive messages explaining the purpose of each commit.
-    Once you're ready to submit your changes, push your branch to your forked repository.
+    Once you are ready to submit your changes, push your branch to your forked repository.
     Submit a pull request to the main repository's develop branch. Provide a detailed description of your changes and reference any relevant issues or pull requests.
 
 5. **Code Review**: Expect feedback and review from our maintainers or contributors. Address any comments or suggestions provided during the review process.
@@ -193,7 +193,7 @@ Thank you for considering contributing to our project! We welcome contributions 
 
 7. **Documentation**: Update the project's documentation to reflect your changes. Include any necessary documentation updates, such as code comments, README modifications, or user guides.
 
-8. **License Agreement**: By contributing to our project, you agree to license your contributions under the terms of the project's license (MIT License).
+8. **License Agreement**: By contributing to our project, you agree to license your contributions under the terms of the project's license (GNU General Public License v3.0).
 
 9. **Be Respectful**: Respect the opinions and efforts of other contributors. Maintain a positive and collaborative attitude throughout the contribution process.
 
